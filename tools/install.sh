@@ -6,7 +6,6 @@ tar zxvf lwtools-4.17.tar.gz
 cd lwtools-4-17
 make
 make install
-cd ..
 #
 # Download cmoc
 #
@@ -17,7 +16,6 @@ cd cmoc-0.1.67
 ./configure
 make
 make install
-cd ..
 #
 # Compile hello_world.c
 #
