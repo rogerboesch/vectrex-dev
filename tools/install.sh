@@ -17,6 +17,7 @@ cd cmoc-0.1.67
 make
 make install
 cd ..
+cd ..
 #
 # Compile hello_world.c
 #
