@@ -3,7 +3,7 @@
 # 
 curl -O http://www.lwtools.ca/releases/lwtools/lwtools-4.17.tar.gz
 tar zxvf lwtools-4.17.tar.gz
-cd lwtools-4-17
+cd lwtools-4.17
 make
 make install
 #
