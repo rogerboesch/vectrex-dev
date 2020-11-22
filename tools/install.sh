@@ -18,8 +18,3 @@ make
 make install
 cd ..
 cd ..
-#
-# Compile hello_world.c
-#
-cd samples
-cmoc --vectrex --verbose hello_world.c
