@@ -13,7 +13,7 @@ curl -O http://perso.b2b2c.ca/~sarrazip/dev/cmoc-0.1.67.tar.gz
 tar zxvf cmoc-0.1.67.tar.gz
 cd cmoc-0.1.67
 ./autogen.sh
-./configure
+./configure --prefix=$HOME/cmoc
 make
 make install
 cd ..
