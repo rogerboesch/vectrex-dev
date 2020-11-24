@@ -7,10 +7,15 @@ cd lwtools-4.17
 make
 make install
 #
-# Download cmoc
+# gcc6809 style version used by Classics Coder
 #
-curl -O http://perso.b2b2c.ca/~sarrazip/dev/cmoc-0.1.67.tar.gz
-tar zxvf cmoc-0.1.67.tar.gz
+curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/cmoc-vec3x.tar.gz
+tar zxvf cmoc-vec3x.tar.gz
+#
+# Standard version
+#
+#curl -O http://perso.b2b2c.ca/~sarrazip/dev/cmoc-0.1.67.tar.gz
+#tar zxvf cmoc-0.1.67.tar.gz
 cd cmoc-0.1.67
 ./autogen.sh
 ./configure --prefix=$HOME/cmoc
