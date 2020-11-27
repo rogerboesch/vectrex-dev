@@ -20,7 +20,7 @@ cd cmoc-classics-coder
 # cd cmoc-0.1.67
 #
 ./autogen.sh
-./configure --prefix=$HOME/cmoc
+./configure
 make
 make install
 cd ..
