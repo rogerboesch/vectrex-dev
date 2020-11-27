@@ -19,6 +19,13 @@ Also it just runs on macOS (iOS coming soon), but natively and without security 
 ### CMOC - C-Compiler for 6809 CPU
 *See [here](https://www.github.com/rogerboesch/cmoc-classics-coder) for more informations*
 
-## Samples & tutorials
 
-*coming soon*
+## Tutorials
+
+Learn how to code in C for the Vectrex - 
+**STARTING SOON on my [YouTube Channel](https://bit.ly/3o3gbMk).**
+
+
+## Samples
+
+You find already some samples here 
