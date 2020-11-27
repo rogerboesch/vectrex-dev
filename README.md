@@ -8,11 +8,13 @@ editor using just the command line
 *Note: Classics Coder is (at the moment) mainly focused on simple examples but therefore perfect for the beginner and learner.
 If you search for a Vextrex IDE that supports more feautures
 
-## Classics Coder for Vectrex
-*coming soon*
 
-### CMOC
-*See [here](https://github.com/rogerboesch/cmoc-classics-coder) for more informations*
+## Classics Coder for Vectrex
+*See [here](http://www.classicscode.com/) for more informations*
+
+
+### CMOC - C-Compiler for 6809 CPU
+*See [here](https://www.github.com/rogerboesch/cmoc-classics-coder) for more informations*
 
 ## Samples & tutorials
 
