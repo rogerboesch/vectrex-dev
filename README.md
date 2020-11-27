@@ -28,4 +28,4 @@ Learn how to code in C for the Vectrex -
 
 ## Samples
 
-You find already some samples here 
+You find already some samples [here](/samples) 
