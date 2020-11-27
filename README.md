@@ -11,7 +11,9 @@ Also it just runs on macOS (iOS coming soon) but nativelz and without security r
 
 
 ## Classics Coder for Vectrex
-*See [here](http://www.classicscoder.com/) for more informations*
+
+* See [here](http://www.classicscoder.com/) for more informations
+* Or download directly from [here](/tools/Classics_Coder_for_Vectrex-1.0.1-100.zip)
 
 
 ### CMOC - C-Compiler for 6809 CPU
