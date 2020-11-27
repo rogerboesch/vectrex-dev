@@ -10,7 +10,7 @@ If you search for a Vextrex IDE that supports more feautures
 
 
 ## Classics Coder for Vectrex
-*See [here](http://www.classicscode.com/) for more informations*
+*See [here](http://www.classicscoder.com/) for more informations*
 
 
 ### CMOC - C-Compiler for 6809 CPU
