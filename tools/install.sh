@@ -9,7 +9,7 @@ make install
 #
 # Download & install gcc6809 style version used by Classics Coder
 #
-curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/cmoc-vec3x.tar.gz
+curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/cmoc-classics-coder.tar.gz
 tar zxvf cmoc-classics-coder.tar.gz
 cd cmoc-classics-coder
 #
