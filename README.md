@@ -2,8 +2,8 @@
 
 ### Introduction
 This is the source and tool git repo associated with the **C-Programming tutorial for the Vectrex**
-I start(ed). You can either follow the tutorials by install Classics Coder Vectrex IDE or with your favored
-editor using just the command line
+I start soon. You can either follow the tutorials by install **The Classics Coder Vectrex IDE** or by using your favored
+code editor using and the command line.
 
 Classics Coder is (at the moment) mainly focused on simple examples and btherefore perfect for the beginner and learner.
 Also it just runs on macOS (iOS coming soon) but nativelz and without security restrictions on macOS (Up to Big Sur)
