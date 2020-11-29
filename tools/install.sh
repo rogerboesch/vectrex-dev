@@ -6,10 +6,11 @@ tar zxvf lwtools-4.17.tar.gz
 cd lwtools-4.17
 make
 make install
+cd ..
 #
 # Download & install gcc6809 style version used by Classics Coder
 #
-curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/Classics_Coder_for_Vectrex-Latest.tar.gz
+curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/cmoc-classics-coder.tar.gz
 tar zxvf cmoc-classics-coder.tar.gz
 cd cmoc-classics-coder
 #
