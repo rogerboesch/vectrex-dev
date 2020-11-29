@@ -6,6 +6,7 @@ tar zxvf lwtools-4.17.tar.gz
 cd lwtools-4.17
 make
 make install
+cd..
 #
 # Download & install gcc6809 style version used by Classics Coder
 #
