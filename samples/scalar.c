@@ -9,7 +9,7 @@
 //  (operational in 2012), and I will try my best to help.
 //
 //  Sebastian Mihai, 2012
-//  Converted to CMOC (Classics Coder Version) 
+//  Converted to CMOC (Classics Coder Version) by Roger Boesch
 //
 
 #include <vectrex/bios.h>
