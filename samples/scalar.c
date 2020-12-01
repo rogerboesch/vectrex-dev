@@ -31,21 +31,21 @@
 #define PLAYER_SPEED 2
 #define BULLET_SPEED 10
 
-void line_to(uint8_t x, uint8_t y) {
+static void line_to(uint8_t x, uint8_t y) {
     intensity_a(MAX_BRIGHTNESS);
 	draw_line_d(y, x);
 }
 
-void move_to(uint8_t x, uint8_t y) {
+static void move_to(uint8_t x, uint8_t y) {
 	moveto_d(y, x);
 }
 
-void zero_beam() {
+static void zero_beam() {
     intensity_a(MAX_BRIGHTNESS);
 	moveto_d(0, 0);
 }
 
-void draw_player(int8_t x) {
+static void draw_player(int8_t x) {
 	move_to(x, -120);
 	move_to(0, -30);
 	move_to(-5, 0);
@@ -62,7 +62,7 @@ void draw_player(int8_t x) {
 	move_to(0, 30);
 }
 
-void draw_bullet(int8_t x, int8_t y) {
+static void draw_bullet(int8_t x, int8_t y) {
 	move_to(x, y);
 	line_to(0, 5);
 	
@@ -71,7 +71,7 @@ void draw_bullet(int8_t x, int8_t y) {
 	move_to(-x, -y);
 }
 
-void draw_enemy(int8_t x, int8_t y, uint8_t frame) {
+static void draw_enemy(int8_t x, int8_t y, uint8_t frame) {
 	move_to(x, y);
 	
 	set_scale(frame*2);
@@ -113,7 +113,7 @@ void draw_enemy(int8_t x, int8_t y, uint8_t frame) {
 	move_to( -x, -y );
 }
 
-int game_loop() {
+static int game_loop() {
 	uint8_t i;
 	int8_t x; // player x
 	int8_t enemyX[5];
@@ -217,7 +217,7 @@ int game_loop() {
 	}
 }
 
-int show_intro(void) {
+static int show_intro(void) {
 	while(1) {
         wait_recal();
     

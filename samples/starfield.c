@@ -43,7 +43,7 @@ struct shot current_shots[SHOTS];
 // This function sets up a random shop, going in one of eight
 // possible directions from one end of the screen to another...
 
-void init_shot(struct shot *current_shot) {
+static void init_shot(struct shot *current_shot) {
     uint8_t choice = random() % 4;                          // start on which side? 
     uint8_t start = random();                               // start on which position? 
     current_shot->shot_counter = -1;                        // shotcounter negative -> active 
@@ -73,7 +73,7 @@ void init_shot(struct shot *current_shot) {
 
 // Process one dot...
 
-void do_shot(struct shot *current_shot) {
+static void do_shot(struct shot *current_shot) {
  	moveto_d(0, 0);                  
  
     if (current_shot->shot_counter > 0) {  
@@ -190,7 +190,7 @@ void do_shot(struct shot *current_shot) {
 
 // Initialize all dots to starting defaults...
  
-void init_new_game(void) {
+static void init_new_game(void) {
     uint8_t i;
     
     for (i=0; i<SHOTS; i++) {
