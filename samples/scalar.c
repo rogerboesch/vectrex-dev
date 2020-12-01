@@ -32,7 +32,7 @@
 #define BULLET_SPEED 10
 
 void line_to(uint8_t x, uint8_t y) {
-    intensity_a(0x7f);
+    intensity_a(MAX_BRIGHTNESS);
 	draw_line_d(y, x);
 }
 
@@ -41,11 +41,11 @@ void move_to(uint8_t x, uint8_t y) {
 }
 
 void zero_beam() {
-    intensity_a(0x7f);
+    intensity_a(MAX_BRIGHTNESS);
 	moveto_d(0, 0);
 }
 
-void draw_player(int8_t x ) {
+void draw_player(int8_t x) {
 	move_to(x, -120);
 	move_to(0, -30);
 	move_to(-5, 0);
@@ -226,7 +226,7 @@ int show_intro(void) {
     		controller_check_joysticks();
 
 		move_to(0, 0);
-        intensity_a(0x7f);
+        intensity_a(MAX_BRIGHTNESS);
 		print_str_c(0, -90, "-- PRESS FIRE --");
 		
 		joy_digital();

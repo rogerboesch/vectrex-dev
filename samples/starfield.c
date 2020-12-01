@@ -7,6 +7,12 @@
 
 #include <vectrex.h>
 
+#pragma vx_copyright "2020"
+#pragma vx_title_pos 0,-80
+#pragma vx_title_size -8, 80
+#pragma vx_title "g STARFIELD"
+#pragma vx_music vx_music_1
+
 #define MAX_BRIGHTNESS (0x7f)
 #define TO_HALF_THREE 0
 #define TO_THREE 1
@@ -26,30 +32,23 @@
 
 struct shot {
     signed short shot_counter;      // time keeper, when should it appear?
-    signed char direction;          // ...
-    unsigned char speed;
-    unsigned char hunting;         // not used
-    signed x;
-    signed y;
+    int8_t direction;         
+    uint8_t speed;
+    int8_t x;
+    int8_t y;
 };
 
 struct shot current_shots[SHOTS]; 
-
-void zero_beam() {
-    intensity_a(0x7f);
-	moveto_d(0, 0);
-}
 
 // This function sets up a random shop, going in one of eight
 // possible directions from one end of the screen to another...
 
 void init_shot(struct shot *current_shot) {
-    unsigned char choice = random() % 4;                    // start on which side? 
-    unsigned char start = random();                         // start on which position? 
+    uint8_t choice = random() % 4;                          // start on which side? 
+    uint8_t start = random();                               // start on which position? 
     current_shot->shot_counter = -1;                        // shotcounter negative -> active 
     current_shot->direction = random() % HIGHEST_DIRECTION; // random direction of shot 
     current_shot->speed = (random() & 3) + 1;               // random speed 
-    current_shot->hunting = 0;                              // still not used :-) 
     
     if (choice == 0)  {                                     // do the starting 
         current_shot->y = -127;
@@ -192,7 +191,7 @@ void do_shot(struct shot *current_shot) {
 // Initialize all dots to starting defaults...
  
 void init_new_game(void) {
-    unsigned char i;
+    uint8_t i;
     
     for (i=0; i<SHOTS; i++) {
         current_shots[i].shot_counter = 10;
@@ -200,7 +199,8 @@ void init_new_game(void) {
 }
 
 int main(void) {
-    unsigned char i;   
+    uint8_t i; 
+      
     init_new_game();   
 
     while (TRUE) {

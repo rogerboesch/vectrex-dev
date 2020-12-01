@@ -6,6 +6,8 @@
 #pragma vx_title "g CLASSICS CODER"
 #pragma vx_music vx_music_1
 
+#define MAX_BRIGHTNESS (0x7f)
+
 int8_t rectangle[8] = {
 	40, 0,
 	0, 40,
@@ -29,7 +31,7 @@ int main() {
 		if (controller_joystick_1_y() < 0) x -= 1;
 		if (controller_joystick_1_y() > 0) x += 1;
 
-        intensity_a(0x7f);
+        intensity_a(MAX_BRIGHTNESS);
         moveto_d(x, y);
         draw_vl_a(4, rectangle);
     }
