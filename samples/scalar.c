@@ -12,7 +12,7 @@
 //  Converted to CMOC (Classics Coder Version) by Roger Boesch
 //
 
-#include <vectrex/bios.h>
+#include <vectrex.h>
 
 #pragma vx_copyright "2020"
 #pragma vx_title_pos 0,-80
