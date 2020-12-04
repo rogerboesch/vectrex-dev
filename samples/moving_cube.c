@@ -1,3 +1,11 @@
+// 
+// File:   moving_cube.c
+// Author: Roger Boesch
+// Info:   Shows basic uasge of joystick
+//
+// Created for Classics Coder and CMOC by Roger Boesch
+//
+
 #include <vectrex.h>
 
 #pragma vx_copyright "2020"
