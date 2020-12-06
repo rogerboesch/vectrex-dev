@@ -1,5 +1,7 @@
 # Tutorial: Programming Games in C for the Vectrex
 
+**TUTORIAL STARTS SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
+
 ### Introduction
 Programming the Vectrex in [6809 Assembler](http://vide.malban.de/help/vectrex-tutorial-ii) can be challenging if you have never worked with Assembler before.
 But for a long time it was the only way to write performant games for the Vectrex.
@@ -13,17 +15,16 @@ But let's start now and bring you closer to the "Secrets" on **Programming Games
 
 #### macOS
 All you need to follow this tutorial is The Classics Coder App (macOS) which can be downloaded [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/Classics_Coder_for_Vectrex-Latest.tar.gz).
-
 As you can see in my [YouTube Video](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w) it's simple to install and use.
 
 
 #### Windows
-*Windows support is coming soon. In the meantime you can easily install a toolchain to follow the tutorials.
+*Windows support is coming soon. In the meantime you can easily install the toolchain to follow the tutorials by using the command line.
 How to to this I will explain in this YouTube Video (coming soon)*
 
 
 #### Linux
-*Linux support is coming soon. In the meantime you can easily install a toolchain to follow the tutorials.
+*Linux support is coming soon. In the meantime you can easily install the toolchain to follow the tutorials by using the command line.
 How to to this I will explain in this YouTube Video (coming soon)*
 
 
@@ -42,7 +43,7 @@ How to to this I will explain in this YouTube Video (coming soon)*
 
 ## YouTube Video
 
-**STARTING SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
+**TUTORIAL STARTS SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
 
 
 ## Samples
