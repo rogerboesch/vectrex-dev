@@ -1,6 +1,7 @@
 # Tutorial: Programming Games in C for the Vectrex
 
-**TUTORIAL STARTS SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
+**STARTS SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
+
 
 ### Introduction
 Programming the Vectrex in [6809 Assembler](http://vide.malban.de/help/vectrex-tutorial-ii) can be challenging if you have never worked with Assembler before.
@@ -11,11 +12,12 @@ and really simple for C programmers coming from other platforms to create games 
 I hope you enjoy this tutorial as I have done when creating the tools and writing this down.
 But let's start now and bring you closer to the "Secrets" on **Programming Games in C for the Vectrex!**
 
-### Setup
+
+### Installation
 
 #### macOS
-All you need to follow this tutorial is The Classics Coder App (macOS) which can be downloaded [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/Classics_Coder_for_Vectrex-Latest.tar.gz).
-As you can see in my [YouTube Video](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w) it's simple to install and use.
+All you need to follow this tutorial is **The Classics Coder App** (macOS) which can be downloaded [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/Classics_Coder_for_Vectrex-Latest.tar.gz).
+As you can see in my [YouTube Video](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w), it's simple to install and use.
 
 
 #### Windows
@@ -51,7 +53,7 @@ How to to this I will explain in this YouTube Video (coming soon)*
 Find some other samples [here](https://github.com/rogerboesch/vectrex-dev/tree/master/samples) 
 
 
-### References & Links
+## References & Links
 
 * Classics Coder for Vectrex: [link](http://www.classicscoder.com/classics-coder-vec.html)
 * CMOC, C-Compiler for 6809 CPU: [link](https://www.github.com/rogerboesch/cmoc-classics-coder)
