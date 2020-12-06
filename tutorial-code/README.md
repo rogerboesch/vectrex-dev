@@ -13,6 +13,9 @@ I hope you enjoy this tutorial as I have done when creating the tools and writin
 But let's start now and bring you closer to the "Secrets" on **Programming Games in C for the Vectrex!**
 
 
+![Pong: Programming Games in C for the Vectrex](assets/pong.gif)
+
+
 ### Installation
 
 #### macOS
