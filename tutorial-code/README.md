@@ -43,17 +43,20 @@ How to to this I will explain in this YouTube Video (coming soon)*
 * Chapter 9: User Feedback - Scoring and Rewards
 * Chapter 10: Final version of Tutorial 1 (more in Tutorial 2)
 
+
+## Source Code
+
+The source code of the different chapters of tutorial 1 can be downloaded from [here](/tutorial)
+
+
 ## YouTube Video
 
 **TUTORIAL STARTS SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
 
-
-## Samples
-
-Find some other samples [here](https://github.com/rogerboesch/vectrex-dev/tree/master/samples) 
 
 
 ## References & Links
 
 * Classics Coder for Vectrex: [link](http://www.classicscoder.com/classics-coder-vec.html)
 * CMOC, C-Compiler for 6809 CPU: [link](https://www.github.com/rogerboesch/cmoc-classics-coder)
+* Some other C-Examples: [link](https://github.com/rogerboesch/vectrex-dev/tree/master/samples) 
