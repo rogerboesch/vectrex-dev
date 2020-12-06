@@ -1,7 +1,7 @@
-# Tutorial, Programming Games in C for the Vectrex
+# Tutorial: Programming Games in C for the Vectrex
 
 ### Introduction
-Programming the Vectrex in [6809 Assembler]() can be challenging if you have never worked in Assembler before.
+Programming the Vectrex in [6809 Assembler](http://vide.malban.de/help/vectrex-tutorial-ii) can be challenging if you have never worked with Assembler before.
 But for a long time it was the only way to write performant games for the Vectrex.
 With this tutorial series, I focus therefore on C to bring Game Programming for the Vectrex to a wider audience
 of interested developers. By using [Classics Coder for Vectrex](http://www.classicscoder.com/classics-coder-vec.html) and the underlying [CMOC C-Compiler](https://www.github.com/rogerboesch/cmoc-classics-coder), it's easy for everyone
@@ -40,18 +40,6 @@ How to to this I will explain in this YouTube Video (coming soon)*
 * Chapter 9: User Feedback - Scoring and Rewards
 * Chapter 10: Final version of Tutorial 1 (more in Tutorial 2)
 
-
-### References & Links
-
-* Classics Coder for Vectrex: [link](http://www.classicscoder.com/classics-coder-vec.html)
-
-* See [here](http://www.classicscoder.com/classics-coder-vec.html) for more informations
-* Or download directly from [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/Classics_Coder_for_Vectrex-Latest.tar.gz)
-
-#### CMOC - C-Compiler for 6809 CPU
-*See [here](https://www.github.com/rogerboesch/cmoc-classics-coder) for more informations*
-
-
 ## YouTube Video
 
 **STARTING SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
@@ -60,3 +48,9 @@ How to to this I will explain in this YouTube Video (coming soon)*
 ## Samples
 
 Find some other samples [here](https://github.com/rogerboesch/vectrex-dev/tree/master/samples) 
+
+
+### References & Links
+
+* Classics Coder for Vectrex: [link](http://www.classicscoder.com/classics-coder-vec.html)
+* CMOC, C-Compiler for 6809 CPU: [link](https://www.github.com/rogerboesch/cmoc-classics-coder)
