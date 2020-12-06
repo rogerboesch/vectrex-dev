@@ -8,7 +8,6 @@
 //
 
 #include <vectrex.h>
-#include <vectrex/stdlib.h>
 
 // Game screen data
 #pragma vx_copyright "2020"
@@ -20,7 +19,7 @@
 #define DEFAULT_INTENSITY 0x7F
 #define DEFAULT_SCALE 0x7F
 
-// Initialize
+// Initialise
 void vectrex_init() {
     set_beam_intensity(DEFAULT_INTENSITY);
     set_scale(DEFAULT_SCALE);

@@ -8,7 +8,6 @@
 //
 
 #include <vectrex.h>
-#include <vectrex/stdlib.h>
 
 #pragma vx_copyright "2020"
 #pragma vx_title_pos 0,-80
@@ -37,7 +36,7 @@ static struct game_object paddle[2];
 static struct game_object ball;
 static struct game_object border;
 
-// Initialize
+// Initialise
 void vectrex_init() {
     set_beam_intensity(DEFAULT_INTENSITY);
     set_scale(DEFAULT_SCALE);

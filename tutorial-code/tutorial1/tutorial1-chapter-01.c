@@ -8,7 +8,6 @@
 //
 
 #include <vectrex.h>
-#include <vectrex/stdlib.h>
 
 // Game screen data
 #pragma vx_copyright "2020"
@@ -17,7 +16,7 @@
 #pragma vx_title "g PONG"
 #pragma vx_music vx_music_1
 
-// Initialize
+// Initialise
 void vectrex_init() {
 }
 

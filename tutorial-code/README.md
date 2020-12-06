@@ -36,13 +36,13 @@ How to to this I will explain in this YouTube Video (coming soon)*
 ## Chapters
 
 * Chapter 1: The Game Loop
-* Chapter 2: Initializing the Vectrex
-* Chapter 3: Initializing your Game
+* Chapter 2: Initialising the Vectrex
+* Chapter 3: Initialising your Game
 * Chapter 4: Drawing Game Objects
 * Chapter 5: Moving Game Objects
 * Chapter 6: Adding the Game Logic
 * Chapter 7: User Input - The Joystick 
-* Chapter 8: Game Objects Interactions - Collision handling
+* Chapter 8: Game Object Interactions - Collision handling
 * Chapter 9: User Feedback - Scoring and Rewards
 * Chapter 10: Final version of Tutorial 1 (more in Tutorial 2)
 
@@ -63,3 +63,4 @@ The source code of the different chapters of tutorial 1 can be downloaded [here]
 * Classics Coder for Vectrex: [link](http://www.classicscoder.com/classics-coder-vec.html)
 * CMOC, C-Compiler for 6809 CPU: [link](https://www.github.com/rogerboesch/cmoc-classics-coder)
 * Some other C-Examples: [link](https://github.com/rogerboesch/vectrex-dev/tree/master/samples) 
+* The Vectrex Programming Tutorial (Assembler): [link](https://www.playvectrex.com/designit/chrissalo/toc.htm)

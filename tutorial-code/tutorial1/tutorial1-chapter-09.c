@@ -118,8 +118,6 @@ BOOL paddle_is_on_bottom(uint8_t number) {
 
 void collission_detection() {
     if (game_object_is_colliding(&ball, &paddle[PLAYER_1])) {
-        // Play a sound (not implemented yet in CC)
-
         ball_speed_x = -ball_speed_x;
 
         while (game_object_is_colliding(&ball, &paddle[PLAYER_1])) {
@@ -129,8 +127,6 @@ void collission_detection() {
     }
 
     if (game_object_is_colliding(&ball, &paddle[PLAYER_2])) {
-        // Play a sound (not implemented yet in CC)
-
         ball_speed_x = -ball_speed_x;
 
         while (game_object_is_colliding(&ball, &paddle[PLAYER_2])) {
@@ -171,7 +167,7 @@ void check_ball_position() {
      }
 }
 
-// Initialize
+// Initialise
 void vectrex_init() {
     set_beam_intensity(DEFAULT_INTENSITY);
     set_scale(DEFAULT_SCALE);

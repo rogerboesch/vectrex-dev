@@ -8,7 +8,6 @@
 //
 
 #include <vectrex.h>
-#include <vectrex/stdlib.h>
 
 #pragma vx_copyright "2020"
 #pragma vx_title_pos 0,-80
@@ -84,7 +83,7 @@ void game_object_draw(struct game_object *object, const int8_t vertices[]) {
     draw_vlc(vertices);
 }
 
-// Initialize
+// Initialise
 void vectrex_init() {
     set_beam_intensity(DEFAULT_INTENSITY);
     set_scale(DEFAULT_SCALE);

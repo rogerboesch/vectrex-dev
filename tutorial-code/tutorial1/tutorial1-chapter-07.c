@@ -8,7 +8,6 @@
 //
 
 #include <vectrex.h>
-#include <vectrex/stdlib.h>
 
 #pragma vx_copyright "2020"
 #pragma vx_title_pos 0,-80
@@ -33,8 +32,6 @@ const int8_t screen_min_y = -128;
 int8_t paddle_speed = 4;
 int8_t ball_speed_x = 2;
 int8_t ball_speed_y = 1;
-int8_t score_player1 = 0;
-int8_t score_player2 = 0;
 
 // Game structure used to hold data for each game object
 struct game_object {
@@ -127,7 +124,7 @@ void check_ball_position() {
 		ball.y += ball_speed_y;
     }
 
-    // Ball touches border: Point for player1 if left border, otherwise for player 2
+    // Ball touches border
     BOOL ball_is_on_right_side = ball.x + ball.x2 >= (screen_max_x - ballSpeedX);
     if (ball_is_on_right_side || ball.x + ball.x1 <= (screen_min_x + ballSpeedX)) {
         ball_speed_x = -ball_speed_x;
@@ -137,7 +134,7 @@ void check_ball_position() {
     }
 }
 
-// Initialize
+// Initialise
 void vectrex_init() {
     set_beam_intensity(DEFAULT_INTENSITY);
     set_scale(DEFAULT_SCALE);
@@ -174,11 +171,6 @@ void game_init() {
 
 void game_input() {
     controller_check_joysticks();
-
-    controller_enable_1_x();
-    controller_enable_1_y();
-    controller_enable_2_x();
-    controller_enable_2_y();
 
     if (controller_joystick_1_up() && !paddle_is_on_top(PLAYER_1)) {
         paddle[PLAYER_1].y += paddle_speed;
