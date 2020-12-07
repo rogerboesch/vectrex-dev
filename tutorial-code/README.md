@@ -1,6 +1,6 @@
 # Tutorial: Programming Games in C for the Vectrex
 
-**STARTS SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
+**WATCH NOW ON MY [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
 
 
 ### Introduction
@@ -54,7 +54,7 @@ The source code of the different chapters of tutorial 1 can be downloaded [here]
 
 ### YouTube Video
 
-**TUTORIAL STARTS SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
+**WATCH NOW ON MY [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
 
 
 

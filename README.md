@@ -22,7 +22,7 @@ Also it just runs on macOS (iOS coming soon), but natively and without security 
 ## Tutorials
 
 Learn how to code in C for the Vectrex - 
-**STARTING SOON on my [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
+**WATCH NOW ON MY [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
 
 
 ## Samples
