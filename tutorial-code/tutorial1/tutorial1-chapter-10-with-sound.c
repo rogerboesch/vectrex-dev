@@ -1,6 +1,6 @@
 // 
 // Author: Roger Boesch
-// File:   tutorial1-chapter-10-wth-sound.c
+// File:   tutorial1-chapter-10-with-sound.c
 // Info:   Tutorial, Programming Games in C for the Vectrex
 //         Pong game, Chapter 10: Final version of tutorial 1 (more in tutorial 2)
 //         Short chapter about integrate music and sound effects
