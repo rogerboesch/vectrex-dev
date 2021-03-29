@@ -1,15 +1,14 @@
-//
-//  Scalar
-//
-//  Not really a game, but a tech demo of programming the Vectrex.
-//  It shows how to use scaling, animation, collision detection.
 // 
-//  If you have any questions regarding the code, contact me
-//  via the method specified at  http://www.sebastianmihai.com
-//  (operational in 2012), and I will try my best to help.
+// File:   scalar.c
+// Author: Sebastian Mihai
+// Info:   Not really a game, but a tech demo of programming the Vectrex.
+//         It shows how to use scaling, animation, collision detection.
+// 
+//         If you have any questions regarding the code, contact me
+//         via the method specified at  http://www.sebastianmihai.com
+//         (operational in 2012), and I will try my best to help.
 //
-//  Sebastian Mihai, 2012
-//  Converted to CMOC (Classics Coder Version) by Roger Boesch
+// Converted to Classics Coder and CMOC by Roger Boesch
 //
 
 #include <vectrex.h>
@@ -38,11 +37,6 @@ static void line_to(uint8_t x, uint8_t y) {
 
 static void move_to(uint8_t x, uint8_t y) {
 	moveto_d(y, x);
-}
-
-static void zero_beam() {
-    intensity_a(MAX_BRIGHTNESS);
-	moveto_d(0, 0);
 }
 
 static void draw_player(int8_t x) {

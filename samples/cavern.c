@@ -1,6 +1,9 @@
 // 
-// "Vecavern" example code, published by Graham Toal in Facebook group https://www.facebook.com/groups/vectrex
-// Convert to Classics Coder/CMOC by Roger Boesch
+// File:   cavern.c
+// Author: Graham Toal
+// Info:   Experimental. Unfinished "Vecavern" example code, published by Graham Toal in Facebook group https://www.facebook.com/groups/vectrex
+//
+// Converted to Classics Coder and CMOC by Roger Boesch
 //
 
 #include <vectrex.h>

@@ -1,3 +1,11 @@
+// 
+// File:   hello_world.c
+// Author: Roger Boesch
+// Info:   Hello world version for the Vectrex
+//
+// Created for Classics Coder and CMOC by Roger Boesch
+//
+
 #include <vectrex.h>
 
 #pragma vx_copyright "2020"

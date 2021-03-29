@@ -1,8 +1,9 @@
+// 
+// File:   starfield.c
+// Author: Malban
+// Info:   Starfield example taken from http://malban.de/oldies/vectrex/vectrex-c-gcc
 //
-// Starfield
-// Example taken from http://malban.de/oldies/vectrex/vectrex-c-gcc
-//
-// Converted to Classics Coder / CMOC by Roger Boesch
+// Converted to Classics Coder and CMOC by Roger Boesch
 //
 
 #include <vectrex.h>
