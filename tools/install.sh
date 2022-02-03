@@ -26,7 +26,7 @@ cd cmoc-classics-coder
 #cd cmoc-0.1.67
 #
 ./autogen.sh
-./configure --prefix="$HOME/usr"
+./configure --prefix="usr"
 make
 make install
 cd ..
