@@ -10,6 +10,8 @@ code editor and the command line.
 
 VectreC is (at the moment) mainly focused on simple examples and therefore perfect for the beginner and learner.
 Also it just runs on macOS (Linux and Windows coming soon), but natively and without security restrictions on macOS (also on M1 and M2)
+
+
 *Note: If you search for a Vextrex IDE that supports more features for professional development take a look at [VIDE](https://github.com/malbanGit/Vide)*
 
 
