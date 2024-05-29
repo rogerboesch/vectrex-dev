@@ -1,6 +1,6 @@
 # Vectrex C Development
 
-I'm currently working on an update which should be available soon. Thanks for your understanding!
+**I'm currently working on an update which should be available soon. Thanks for your understanding!**
 
 ### Files
 
