@@ -27,7 +27,7 @@ cd ..
 #
 # Download & build gcc6809 style version used by VectreC
 #
-curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/cmoc-vectrec.tar.gz
+curl -O https://github.com/rogerboesch/vectrex-dev/raw/master/vectrec/cmoc-vectrec.tar.gz
 tar zxvf cmoc-vectrec.tar.gz
 cd cmoc-vectrec
 ./autogen.sh
