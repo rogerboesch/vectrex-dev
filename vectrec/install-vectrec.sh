@@ -42,7 +42,7 @@ cd ..
 #
 # Download compile script
 #
-curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/compile.sh
+curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/vectrec/compile.sh
 chmod a+x compile.sh
 #
 # Cleanup toolchain
@@ -69,9 +69,26 @@ cp -R VectreC.app $INSTALLDIR/VectreC.app
 cd ..
 cd assets
 cd roms
-cp romfast.bin $INSTALLDIR/romfast.bin
+mkdir $INSTALLDIR/roms
+cp romfast.bin $INSTALLDIR/roms/romfast.bin
 #
 # Cleanup emulator
+#
+cd $INSTALLDIR
+rm -R temp
+#
+# Download sample project and VSCode tasks
+#
+cd $INSTALLDIR
+git clone https://github.com/rogerboesch/vectrex-dev.git temp
+cd temp
+rm -rf .git
+cd vectrec
+cp -R sample $INSTALLDIR/sample
+cd ..
+cp -R tutorial-code $INSTALLDIR/tutorial
+#
+# Cleanup samples
 #
 cd $INSTALLDIR
 rm -R temp
