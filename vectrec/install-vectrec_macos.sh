@@ -30,10 +30,12 @@ echo
 echo "INSTALL LWTOOLS +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
+cd temp
 cd vectrec
 tar zxvf lwtools-4.17.tar.gz
 cd lwtools-4.17
 make
+#
 # Copy binaries to install path
 #
 cp lwar/lwar $INSTALLDIR/lwar
