@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "VectreC: Compile current file",
+            "type": "shell",
+            "command": "$HOME/vectrec/compile.sh",
+            "args": [
+                "${workspaceFolder}",
+                "${fileBasenameNoExtension}"
+            ],
+            "options": {
+            },
+            "problemMatcher": [
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "VectreC: Run current file",
+            "type": "shell",
+            "command": "$HOME/vectrec/VectreC.app/Contents/MacOS/VectreC",
+            "args": [
+                "${workspaceFolder}/${fileBasenameNoExtension}.bin",
+                "right"
+            ],
+            "group": {
+              "kind": "build",
+              "isDefault": false
+            }
+          }
+      
+    ]
+}
