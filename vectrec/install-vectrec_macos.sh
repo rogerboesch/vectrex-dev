@@ -11,11 +11,26 @@ mkdir $INSTALLDIR
 cd $INSTALLDIR
 #
 # ===============================================================================
+# CLONE REPO
+#
+echo
+echo "CLONE REPO +++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+cd $INSTALLDIR
+git clone https://github.com/rogerboesch/vectrex-dev.git temp
+cd temp
+rm -rf .git
+find . | grep .git | xargs rm -rf
+#
+#
+# ===============================================================================
 # LWTOOLS: Download & build
 #
+echo
 echo "INSTALL LWTOOLS +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
-curl -O http://www.lwtools.ca/releases/lwtools/lwtools-4.17.tar.gz
+cd $INSTALLDIR
+cd vectrec
 tar zxvf lwtools-4.17.tar.gz
 cd lwtools-4.17
 make
@@ -116,8 +131,6 @@ echo
 echo "CLEANUP ++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
-rm -rfv lwtools-4.17
-rm -rfv lwtools-4.17.tar.gz
 rm -rfv temp
 #
 # ===============================================================================
