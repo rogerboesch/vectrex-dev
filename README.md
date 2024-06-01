@@ -18,7 +18,7 @@ Also it just runs on macOS (Linux and Windows coming soon), but natively and wit
 
 For more infos take a look at my [Substack](https://vectrex.substack.com/p/vectrex-game-programming-in-c) newsletter
 
-### Classisc Coder for Vectrex (macOS App - Deprecated)
+*Classisc Coder for Vectrex (macOS App) is now deprecated*
 
 * See [here](http://www.classicscoder.com/classics-coder-vec.html) for more informations
 * Or download directly from [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/vectrec-latest.tar.gz)
