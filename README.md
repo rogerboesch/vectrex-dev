@@ -23,9 +23,6 @@ For more infos take a look at my [Substack](https://vectrex.substack.com/p/vectr
 * See [here](http://www.classicscoder.com/classics-coder-vec.html) for more informations
 * Or download directly from [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/vectrec-latest.tar.gz)
 
-#### CMOC - C-Compiler for 6809 CPU
-*See [here](https://www.github.com/rogerboesch/cmoc-vectrec) for more informations*
-
 
 ## Tutorials
 
