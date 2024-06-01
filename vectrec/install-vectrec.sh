@@ -58,7 +58,7 @@ cp lwasm/lwasm $INSTALLDIR/lwasm
 cp lwlink/lwlink $INSTALLDIR/lwlink
 cp lwlink/lwobjdump $INSTALLDIR/lwobjdump
 #
-# Set path
+# Set path (cmoc needs lwasm)
 #
 export PATH=$INSTALLDIR:$PATH
 #
@@ -83,7 +83,7 @@ cp src/cmoc $INSTALLDIR/cmoc
 cp -R src/stdlib $INSTALLDIR/stdlib
 #
 # ------------------------------------------------------------------------------
-# SCRIPTS: Copy compile script
+# SCRIPTS: Copy script
 #
 echo
 echo "COPY SCRIPTS +++++++++++++++++++++++++++++++++++++++++++++++"
@@ -95,15 +95,18 @@ cd vectrec
 # Copy on macOS
 #
 if [[ $OS == 'macos' ]]; then
-cp compile_macos.sh $INSTALLDIR/compile.sh
+cp compile-macos.sh $INSTALLDIR/compile.sh
+cp start-macos.sh $INSTALLDIR/start.sh
 fi
 #
 # Copy on linux
 #
 if [[ $OS == 'linux' ]]; then
-cp compile_linux.sh $INSTALLDIR/compile.sh
+cp compile-linux.sh $INSTALLDIR/compile.sh
+cp start-linux.sh $INSTALLDIR/start.sh
 fi
 chmod a+x $INSTALLDIR/compile.sh
+chmod a+x $INSTALLDIR/start.sh
 #
 # ------------------------------------------------------------------------------
 # CODE: Copy Sample & Tutorial

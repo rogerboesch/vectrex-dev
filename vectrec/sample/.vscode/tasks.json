@@ -21,10 +21,10 @@
         {
             "label": "VectreC: Run current file",
             "type": "shell",
-            "command": "$HOME/vectrec/VectreC.app/Contents/MacOS/VectreC",
+            "command": "$HOME/vectrec/start.sh",
             "args": [
-                "${workspaceFolder}/${fileBasenameNoExtension}.bin",
-                "right"
+                "${workspaceFolder}",
+                "${fileBasenameNoExtension}"
             ],
             "group": {
               "kind": "build",
