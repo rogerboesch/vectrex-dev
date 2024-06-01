@@ -4,7 +4,8 @@
 
 **I'm currently working on an update which should be available soon. Thanks for your understanding!**
 
-*Note: If you search for a Vextrex IDE that supports more features for professional development take a look at [VIDE](https://github.com/malbanGit/Vide)*
+*Note:*
+*If you search for a Vextrex IDE that supports more features for professional development, take also a look at [VIDE](https://github.com/malbanGit/Vide)*
 
 ## VectreC (New Visual Studio Studio Extension)
 
