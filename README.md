@@ -14,8 +14,11 @@ Also it just runs on macOS (Linux and Windows coming soon), but natively and wit
 
 *Note: If you search for a Vextrex IDE that supports more features for professional development take a look at [VIDE](https://github.com/malbanGit/Vide)*
 
+## VectreC (New Visual Studio Studio Extension)
 
-## VectreC
+For more infos take a look at my [Substack](https://vectrex.substack.com/p/vectrex-game-programming-in-c) newsletter
+
+### Classisc Coder for Vectrex (macOS App - Deprecated)
 
 * See [here](http://www.classicscoder.com/classics-coder-vec.html) for more informations
 * Or download directly from [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/vectrec-latest.tar.gz)
