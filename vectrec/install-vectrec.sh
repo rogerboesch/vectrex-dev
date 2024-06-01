@@ -5,14 +5,48 @@
 export INSTALLDIR="$1"
 export PATH="$INSTALLDIR:$PATH"
 #
+# Detect OS
+#
+OS="`uname`"
+case $OS in
+  'Linux')
+    OS='linux'
+    echo "Install on Linux"
+    ;;
+  'Darwin') 
+    OS='macos'
+    echo "Install on macOS"
+    ;;
+  *) ;;
+esac
+#
 # Create folder
 #
 mkdir $INSTALLDIR
 cd $INSTALLDIR
 #
-# Download & build lwtools
+# ===============================================================================
+# CLONE REPO
 #
-curl -O http://www.lwtools.ca/releases/lwtools/lwtools-4.17.tar.gz
+echo
+echo "CLONE REPO +++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+cd $INSTALLDIR
+git clone https://github.com/rogerboesch/vectrex-dev.git temp
+cd temp
+rm -rf .git
+find . | grep .git | xargs rm -rf
+#
+#
+# ===============================================================================
+# LWTOOLS: Download & build
+#
+echo
+echo "INSTALL LWTOOLS +++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+cd $INSTALLDIR
+cd temp
+cd vectrec
 tar zxvf lwtools-4.17.tar.gz
 cd lwtools-4.17
 make
@@ -23,11 +57,20 @@ cp lwar/lwar $INSTALLDIR/lwar
 cp lwasm/lwasm $INSTALLDIR/lwasm
 cp lwlink/lwlink $INSTALLDIR/lwlink
 cp lwlink/lwobjdump $INSTALLDIR/lwobjdump
-cd ..
 #
-# Download & build gcc6809 style version used by VectreC
+# Set path
 #
-curl -O https://github.com/rogerboesch/vectrex-dev/raw/master/vectrec/cmoc-vectrec.tar.gz
+export PATH=$INSTALLDIR:$PATH
+#
+# ===============================================================================
+# CMOC: Build gcc6809 style version used by VectreC
+#
+echo
+echo "INSTALL CMOC +++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+cd $INSTALLDIR
+cd temp
+cd vectrec
 tar zxvf cmoc-vectrec.tar.gz
 cd cmoc-vectrec
 ./autogen.sh
@@ -38,61 +81,98 @@ make
 #
 cp src/cmoc $INSTALLDIR/cmoc
 cp -R src/stdlib $INSTALLDIR/stdlib
-cd ..
 #
-# Download compile script
+# ------------------------------------------------------------------------------
+# SCRIPTS: Copy compile script
 #
-curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/vectrec/compile.sh
-chmod a+x compile.sh
-#
-# Cleanup toolchain
-#
+echo
+echo "COPY SCRIPTS +++++++++++++++++++++++++++++++++++++++++++++++"
+echo
 cd $INSTALLDIR
-rm -R -f lwtools-4.17
-rm -f lwtools-4.17.tar.gz
-rm -R -f cmoc-vectrec
-rm -f cmoc-vectrec.tar.gz
-#
-# Build emulator
-#
-cd $INSTALLDIR
-git clone https://github.com/rogerboesch/vectreC.git temp
 cd temp
-rm -rf .git
-cmake -Bbuild
-cd build
-make
-cp -R VectreC.app $INSTALLDIR/VectreC.app
+cd vectrec
 #
-# Copy ROM file
+# Copy on macOS
 #
-cd ..
-cd assets
-cd roms
-mkdir $INSTALLDIR/roms
-cp romfast.bin $INSTALLDIR/roms/romfast.bin
+if [[ $OS == 'macos' ]]; then
+cp compile_macos.sh $INSTALLDIR/compile.sh
+fi
 #
-# Cleanup emulator
+# Copy on linux
 #
+if [[ $OS == 'linux' ]]; then
+cp compile_linux.sh $INSTALLDIR/compile.sh
+fi
+chmod a+x $INSTALLDIR/compile.sh
+#
+# ------------------------------------------------------------------------------
+# CODE: Copy Sample & Tutorial
+#
+echo
+echo "COPY CODE ++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
 cd $INSTALLDIR
-rm -R temp
-#
-# Download sample project and VSCode tasks
-#
-cd $INSTALLDIR
-git clone https://github.com/rogerboesch/vectrex-dev.git temp
 cd temp
-rm -rf .git
 cd vectrec
 cp -R sample $INSTALLDIR/sample
 cd ..
 cp -R tutorial-code $INSTALLDIR/tutorial
 #
-# Cleanup samples
+# Cleanup
 #
 cd $INSTALLDIR
-rm -R temp
+rm -rfv temp
 #
+# ===============================================================================
+# EMULATOR: Build
+#
+echo
+echo "INSTALL EMULATOR +++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+cd $INSTALLDIR
+git clone https://github.com/rogerboesch/vectreC.git temp
+cd temp
+rm -rf .git
+find . | grep .git | xargs rm -rf
+#
+cmake -Bbuild
+cd build
+make
+#
+# Copy on macOS
+#
+if [[ $OS == 'macos' ]]; then
+cp -R VectreC.app $INSTALLDIR/VectreC.app
+fi
+#
+# Copy on linux
+#
+if [[ $OS == 'linux' ]]; then
+cp VectreC $INSTALLDIR/VectreC
+fi
+#
+# ------------------------------------------------------------------------------
+# Copy ROM file
+#
+echo
+echo "COPY ROM FILE +++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+cd ..
+cd assets
+cd roms
+mkdir $INSTALLDIR/roms
+cp -v romfast.bin $INSTALLDIR/roms/romfast.bin
+#
+# ===============================================================================
+# Cleanup
+#
+echo
+echo "CLEANUP ++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo
+cd $INSTALLDIR
+rm -rfv temp
+#
+# ===============================================================================
 # Finished
 #
 echo ""
