@@ -2,13 +2,14 @@
 
 ## General
 
+- [ ] Finish vec2x emulator
+- [ ] Create Windows version
 - [x] Make vectrec repo public
 - [x] Use same install script for macos and linux
 - [x] Rename install-vectrex_macos.sh in install-vectrec.sh
 - [x] Create install script for all dependencies (macos, linux)
 - [x] LWTOOLS make failed, fix (Software issue, see below)
 - [x] CMOC make failed, fix (Missed dependencies, path, needs lwasm)
-- [ ] Create Windows version
 
 ## Install script (install-vectrec.sh)
 
