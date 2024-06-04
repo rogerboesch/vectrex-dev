@@ -121,11 +121,6 @@ cp -R sample $INSTALLDIR/sample
 cd ..
 cp -R tutorial-code $INSTALLDIR/tutorial
 #
-# Cleanup
-#
-cd $INSTALLDIR
-rm -rfv temp
-#
 # ===============================================================================
 # EMULATOR: Build
 #
@@ -133,25 +128,17 @@ echo
 echo "INSTALL EMULATOR +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
-git clone https://github.com/rogerboesch/vectreC.git temp
 cd temp
-rm -rf .git
-find . | grep .git | xargs rm -rf
+cd vec2x
 #
 cmake -Bbuild
 cd build
 make
 #
-# Copy on macOS
+# Copy exe
 #
 if [[ $OS == 'macos' ]]; then
-cp -R VectreC.app $INSTALLDIR/VectreC.app
-fi
-#
-# Copy on linux
-#
-if [[ $OS == 'linux' ]]; then
-cp VectreC $INSTALLDIR/VectreC
+cp vec2x $INSTALLDIR/vec2x
 fi
 #
 # ------------------------------------------------------------------------------
@@ -160,11 +147,13 @@ fi
 echo
 echo "COPY ROM FILE +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
-cd ..
-cd assets
-cd roms
+cd $INSTALLDIR
+cd temp
+cd vec2x
+#
 mkdir $INSTALLDIR/roms
 cp -v romfast.bin $INSTALLDIR/roms/romfast.bin
+cp -v empty.png $INSTALLDIR/roms/empty.png
 #
 # ===============================================================================
 # Cleanup
