@@ -1,0 +1,3 @@
+/Users/roger/Data/Retro-Dev/vectrex-dev/vec2x/build2/CMakeFiles/vec2x.dir
+/Users/roger/Data/Retro-Dev/vectrex-dev/vec2x/build2/CMakeFiles/ALL_BUILD.dir
+/Users/roger/Data/Retro-Dev/vectrex-dev/vec2x/build2/CMakeFiles/ZERO_CHECK.dir

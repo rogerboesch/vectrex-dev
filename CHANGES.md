@@ -31,9 +31,10 @@
 - [x] New file start-macos.sh
 - [x] New file start-linux.sh
 
-## Visual Studio code
+## Visual Studio Code Extension
 
-- [x] Call start.sh
+- [ ] Extension (package.json)
+- [x] tasks.json -- Call start.sh
 
 ## LWTOOLS
 
