@@ -8,6 +8,9 @@
 #include "vec2x_platform.h"
 #include "vec2x.h"
 
+#define SUCCESS         1
+#define FAILED          0
+
 #define EMU_TIMER       20          // the emulators heart beats at 20 milliseconds
 #define SCREEN_WIDTH    330*3/2
 #define SCREEN_HEIGHT   410*3/2
@@ -20,9 +23,9 @@ static SDL_Texture* g_texture = NULL;
 
 static int g_quit = 0;
 
-static char *romfilename = "/Users/roger/vectrec/roms/romfast.bin";
+static char *romfilename = "";
 static char *cartfilename = NULL;
-static char *overlayname = "/Users/roger/vectrec/roms/empty.png";
+static char *overlayname = "";
 
 static long scl_factor = 1;
 static long offx = 0;
@@ -34,7 +37,6 @@ void vec2x_platform_render(void) {
 
     if (g_texture) {
         SDL_Rect dest_rect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
-        //SDL_BlitSurface(g_overlay, NULL, g_screenSurface, &dest_rect);
         SDL_RenderCopy(g_renderer, g_texture, NULL, &dest_rect);
     }
 
@@ -51,7 +53,7 @@ void vec2x_platform_render(void) {
 static int _vec2x_platform_setup(void) {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("ERROR - SDL initialization failed: %s\n", SDL_GetError());
-        return -1;
+        return FAILED;
     }
 
     g_window = SDL_CreateWindow("Vec2X", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,SCREEN_WIDTH, SCREEN_HEIGHT, 0);
@@ -75,9 +77,7 @@ static int _vec2x_platform_setup(void) {
     offx = (screenx - ALG_MAX_X / scl_factor) / 2;
     offy = (screeny - ALG_MAX_Y / scl_factor) / 2;
     
-    printf("Started.\n");
-    
-    return 1;
+    return SUCCESS;
 }
 
 int _vec2x_platform_get_desktop_size(int* width, int* height) {
@@ -88,13 +88,13 @@ int _vec2x_platform_get_desktop_size(int* width, int* height) {
         *width = 0;
         *height = 0;
         
-        return -1;
+        return FAILED;
     }
 
     *width = mode.w;
     *height = mode.h;
 
-    return 1;
+    return SUCCESS;
 }
 
 static int _vec2x_platform_orientation(char* str) {
@@ -104,16 +104,18 @@ static int _vec2x_platform_orientation(char* str) {
         
         if (_vec2x_platform_get_desktop_size(&w, &h)) {
             SDL_SetWindowPosition(g_window, w-SCREEN_WIDTH, 0);
-            printf("Right aligned at %d,%d.\n", w-SCREEN_WIDTH, 0);
+            printf("Emulator right aligned at %d,%d.\n", w-SCREEN_WIDTH, 0);
+        }
+        else {
+            return FAILED;
         }
     }
     else {
-        printf("Left aligned at %d,%d.\n", 0, 0);
+        printf("Emulator left aligned at %d,%d.\n", 0, 0);
+        SDL_SetWindowPosition(g_window, 0, 0);
     }
 
-    SDL_SetWindowPosition(g_window, 0, 0);
-    
-    return 1;
+    return SUCCESS;
 }
 
 static int _vec2x_platform_cleanup(void) {
@@ -123,54 +125,56 @@ static int _vec2x_platform_cleanup(void) {
     SDL_DestroyWindow(g_window);
     SDL_Quit();
  
-    return 1;
+    return SUCCESS;
 }
 
-static void _vec2x_platform_load() {
+static int _vec2x_platform_load() {
 	FILE *f;
     
 	if (!(f = fopen(romfilename, "rb"))) {
-
-		perror(romfilename);
-		exit(EXIT_FAILURE);
+		printf("Can't load ROM: %s\n", romfilename);
+		return FAILED;
 	}
     
     if (fread(rom, 1, sizeof (rom), f) != sizeof (rom)){
 		printf("Invalid rom length\n");
-		exit(EXIT_FAILURE);
+		return FAILED;
 	}
 	
     fclose(f);
 
-    printf("ROM file loaded: %s\n", romfilename);
+    printf("ROM loaded: %s\n", romfilename);
 
 	memset(cart, 0, sizeof (cart));
 	if (cartfilename) {
 		FILE *f;
         
 		if(!(f = fopen(cartfilename, "rb"))){
-			perror(cartfilename);
-			exit(EXIT_FAILURE);
+    		printf("Can't load cartridge: %s\n", cartfilename);
+            return FAILED;
 		}
 
         fread(cart, 1, sizeof (cart), f);
 		fclose(f);
         
-        printf("Cartfile loaded: %s\n", cartfilename);
+        printf("Cartridge loaded: %s\n", cartfilename);
 	}
+
+    return SUCCESS;
 }
 
 static void _vec2x_platform_read_events() {
 	SDL_Event e;
-	while(SDL_PollEvent(&e)){
+
+	while (SDL_PollEvent(&e)) {
 		switch(e.type){
 			case SDL_QUIT:
 				g_quit = 1;
 				break;
 			case SDL_KEYDOWN:
-				switch(e.key.keysym.sym){
+				switch (e.key.keysym.sym) {
 					case SDLK_ESCAPE:
-						exit(EXIT_SUCCESS);
+        				g_quit = 1;
 					case SDLK_a:
 						snd_regs[14] &= ~0x01;
 						break;
@@ -200,7 +204,7 @@ static void _vec2x_platform_read_events() {
 				}
 				break;
 			case SDL_KEYUP:
-				switch(e.key.keysym.sym){
+				switch (e.key.keysym.sym) {
 					case SDLK_a:
 						snd_regs[14] |= 0x01;
 						break;
@@ -277,28 +281,44 @@ void _vec2x_platform_load_overlay(const char *filename) {
 }
 
 int main(int argc, char *argv[]) {
-    printf("\nStarting vec2x\n");
-    printf("Usage: vec2x {orientation} {romfile} {cartfile} {overlay}\n\n");
+    printf("\n------------------------------------------------------------\n");
+    printf("Starting vec2x\n");
+    printf("Usage: vec2x {left|right} {romfile} {cartfile} {overlay}\n\n");
 
-    _vec2x_platform_setup();
-
-    if (argc > 1)
-        _vec2x_platform_orientation(argv[1]);
+    // Arguments needed for emulator
     if (argc > 2)
         romfilename = argv[2];
-	if (argc > 3)
-		cartfilename = argv[3];
+    if (argc > 3)
+        cartfilename = argv[3];
+    
+    // Setup emulator
+	if (!_vec2x_platform_load()) {
+        printf("Stopped\n");
+        printf("------------------------------------------------------------\n\n");
+        
+        return 0;
+    }
+
+    // Setup SDL & UI
+    _vec2x_platform_setup();
+
+    // Arguments needed after SQL init
+    if (argc > 1)
+        _vec2x_platform_orientation(argv[1]);
 	if (argc > 4)
         _vec2x_platform_load_overlay(argv[4]);
 
-	_vec2x_platform_load();
+    printf("Setup done. Start emulator\n");
 
 	e8910_init_sound();
 	_vec2x_platform_emuloop();
 	e8910_done_sound();
 
     _vec2x_platform_cleanup();
-    
+
+    printf("Ended\n");
+    printf("------------------------------------------------------------\n\n");
+
 	return 0;
 }
 

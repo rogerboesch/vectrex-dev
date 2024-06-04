@@ -122,6 +122,6 @@ source_group("SDL" FILES ${SDL_SOURCES})
 # ==============================================================================
 
 set_target_properties(${TARGET} PROPERTIES
-	MACOSX_BUNDLE TRUE
-  	#MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/platforms/Info.plist
+	MACOSX_BUNDLE FALSE
+  	MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/src/platforms/Info.plist
 )
