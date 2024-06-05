@@ -46,7 +46,6 @@ cd temp
 rm -rf .git
 find . | grep .git | xargs rm -rf
 #
-#
 # ===============================================================================
 # LWTOOLS: Download & build
 #
@@ -55,7 +54,7 @@ echo "INSTALL LWTOOLS +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
 cd temp
-cd vectrec
+cd vectrec-source
 tar zxvf lwtools-4.17.tar.gz
 cd lwtools-4.17
 make
@@ -79,7 +78,7 @@ echo "INSTALL CMOC +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
 cd temp
-cd vectrec
+cd vectrec-source
 tar zxvf cmoc-vectrec.tar.gz
 cd cmoc-vectrec
 ./autogen.sh
@@ -99,7 +98,7 @@ echo "COPY SCRIPTS +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
 cd temp
-cd vectrec
+cd vectrec-binaries
 #
 # Copy on macOS
 #
@@ -125,8 +124,7 @@ echo "COPY CODE ++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
 cd temp
-cd vectrec
-cp -R sample $INSTALLDIR/sample
+cp -R vectrec-sample $INSTALLDIR/sample
 cd ..
 cp -R tutorial-code $INSTALLDIR/tutorial
 #
