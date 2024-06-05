@@ -11,8 +11,7 @@ Once finished, it will have the following features:
 - Vectrex syntax highlighting
 - CMOC support — available
 - GCC support
-- Works on macOS and Linux — available
-- Works on Windows — coming soon
+- Works on macOS (ARM and Intel) and Linux — available
 
 While VectreC is still in development, it's already a powerful tool and compatible with macOS and Linux.
 
@@ -21,7 +20,6 @@ While VectreC is still in development, it's already a powerful tool and compatib
 
 - Download this repository
 - Execute ```install-vectrec.sh``` from the command line if you are on macOS or Linux
-- Execute ```install-vectrec.bat``` from the DOS Console if you are on Windows (coming soon)
 
 ### How to build from source
 

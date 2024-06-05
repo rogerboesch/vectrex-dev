@@ -2,10 +2,10 @@
 
 ## General
 
-- [ ] Create Windows version (binaries)
-- [ ] Create Linux version (binaries)
-- [ ] Create macOS Intel version (binaries)
-- [ ] Create macOS ARM version (binaries)
+- [ ] Finish Visual Studio Extension
+- [x] Create macOS Intel version (binaries)
+- [x] Create Linux version (binaries)
+- [x] Create macOS ARM version (binaries)
 - [x] Finish vec2x emulator
 - [x] Make vectrec repo public
 - [x] Use same install script for macos and linux
@@ -14,7 +14,7 @@
 - [x] LWTOOLS make failed, fix (Software issue, see below)
 - [x] CMOC make failed, fix (Missed dependencies, path, needs lwasm)
 
-## Install script (install-vectrec.sh)
+## Install script (make-vectrec.sh)
 
 - [x] Added OS detection to script
 - [x] Different copy path for linux and macos (compile.sh)
@@ -37,7 +37,9 @@
 ## Visual Studio Code Extension
 
 - [ ] Extension (package.json)
+    - [ ] Syntax highlighting
 - [x] tasks.json -- Call start.sh
+- [x] tasks.json -- Call compile.sh
 
 ## LWTOOLS
 

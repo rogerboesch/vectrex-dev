@@ -18,20 +18,7 @@ But let's start now and bring you closer to the "Secrets" on **Programming Games
 
 ### Installation
 
-#### macOS
-All you need to follow this tutorial is **The Classics Coder App** (macOS) which can be downloaded [here](https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/tools/Classics_Coder_for_Vectrex-Latest.tar.gz).
-As you can see in my [YouTube Video](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w), it's simple to install and use.
-
-
-#### Windows
-*Windows support is coming soon. In the meantime you can easily install the toolchain to follow the tutorials by using the command line.
-How to to this I will explain in this YouTube Video (coming soon)*
-
-
-#### Linux
-*Linux support is coming soon. In the meantime you can easily install the toolchain to follow the tutorials by using the command line.
-How to to this I will explain in this YouTube Video (coming soon)*
-
+For mor information regarding usage and installation of VectreC go to [Substack](https://vectrex.substack.com/p/vectrec)
 
 ## Chapters
 
@@ -60,7 +47,6 @@ The source code of the different chapters of tutorial 1 can be downloaded [here]
 
 ## References & Links
 
-* Classics Coder for Vectrex: [link](http://www.classicscoder.com/classics-coder-vec.html)
 * CMOC, C-Compiler for 6809 CPU: [link](https://www.github.com/rogerboesch/cmoc-classics-coder)
 * Some other C-Examples: [link](https://github.com/rogerboesch/vectrex-dev/tree/master/samples) 
 * The Vectrex Programming Tutorial (Assembler): [link](https://www.playvectrex.com/designit/chrissalo/toc.htm)
