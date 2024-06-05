@@ -1,6 +1,6 @@
 # Vectrex C Development
 
-### Introduction
+## VectreC
 
 VectreC is a Visual Studio Code Extension currently under development. Once finished, it will have the following features:
 
@@ -15,13 +15,13 @@ VectreC is a Visual Studio Code Extension currently under development. Once fini
 
 While VectreC is still in development, it's already a powerful tool for game programming in C. It's compatible with macOS and Linux, allowing you to start coding games immediately. 
 
-### How to install VectreC
+### How to install
 
 - Download this repository
 - Execute install-vectrec.sh from command line if you are on macOS or Linux
 - Execute install-vectrec.bat from DOS Console if you are on Windows (coming soon)
 
-### How to build VectreC from source
+### How to build from source
 
 If you're platform is not yet supported then use the follwing commands to build it for macOS or Linux
 
@@ -31,9 +31,9 @@ $ chmod a+x make-vectrec.sh
 $ ./make-vectrec.sh $HOME/vectrec
 ```
 
-## VectreC (New Visual Studio Studio Extension)
+### More Information
 
-For more infos take a look at my [Substack](https://vectrex.substack.com/p/vectrex-game-programming-in-c) newsletter
+For more information take a look at my [Substack](https://vectrex.substack.com/p/vectrex-game-programming-in-c) newsletter
 
 
 ### Tutorials
@@ -42,6 +42,6 @@ Learn how to code in C for the Vectrex -
 **WATCH NOW ON MY [YouTube Channel](https://www.youtube.com/watch?v=m5Gxzj2xb2M&list=PLP6u_67PQGuHlz8J7U2Y6oUv05O_74D2w)**
 
 
-## Samples
+### Samples
 
 You find some more samples [here](/samples) 
