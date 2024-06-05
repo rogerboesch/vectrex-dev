@@ -138,17 +138,23 @@ echo "INSTALL EMULATOR +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
 cd $INSTALLDIR
 cd temp
+#
+# Switch between macOS and linux
+#
+if [[ $OS == 'macos' ]]; then
 cd vec2x
+fi
+if [[ $OS == 'linux' ]]; then
+cd vec2x-linux
+fi
 #
 cmake -Bbuild
 cd build
 make
 #
-# Copy exe
+# Copy binary
 #
-if [[ $OS == 'macos' ]]; then
 cp vec2x $INSTALLDIR/vec2x
-fi
 #
 # ------------------------------------------------------------------------------
 # Copy ROM file
