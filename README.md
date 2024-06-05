@@ -1,5 +1,7 @@
 ## VectreC
 
+![Screenshot](doc/video-vectrec.gif)
+
 VectreC is a Visual Studio Code Extension that allows you to do game programming in C for the Vectrex.
 Once finished, it will have the following features:
 
@@ -14,7 +16,6 @@ Once finished, it will have the following features:
 
 While VectreC is still in development, it's already a powerful tool and compatible with macOS and Linux.
 
-![Screenshot](doc/video-vectrec.gif)
 
 ### How to install
 
