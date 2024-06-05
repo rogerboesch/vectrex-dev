@@ -2,8 +2,11 @@
 
 ## General
 
-- [ ] Finish vec2x emulator
-- [ ] Create Windows version
+- [ ] Create Windows version (binaries)
+- [ ] Create Linux version (binaries)
+- [ ] Create macOS Intel version (binaries)
+- [ ] Create macOS ARM version (binaries)
+- [x] Finish vec2x emulator
 - [x] Make vectrec repo public
 - [x] Use same install script for macos and linux
 - [x] Rename install-vectrex_macos.sh in install-vectrec.sh
