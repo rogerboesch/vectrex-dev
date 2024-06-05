@@ -1,6 +1,6 @@
 ## VectreC
 
-VectreC is a Visual Studio Code Extension that alows you to do game programming in C for the Vectrex.
+VectreC is a Visual Studio Code Extension that allows you to do game programming in C for the Vectrex.
 Once finished, it will have the following features:
 
 - Installable as VS Code extension
@@ -14,11 +14,13 @@ Once finished, it will have the following features:
 
 While VectreC is still in development, it's already a powerful tool and compatible with macOS and Linux.
 
+![Screenshot](doc/video-vectrec.gif)
+
 ### How to install
 
 - Download this repository
-- Execute install-vectrec.sh from command line if you are on macOS or Linux
-- Execute install-vectrec.bat from DOS Console if you are on Windows (coming soon)
+- Execute ```install-vectrec.sh``` from the command line if you are on macOS or Linux
+- Execute ```install-vectrec.bat``` from the DOS Console if you are on Windows (coming soon)
 
 ### How to build from source
 
