@@ -7,9 +7,9 @@
 # 
 #
 # Install CMOC
-# - Parameter $1: Install folder
+# - Parameter $1: Install folder (Not yet used)
 # 
-export INSTALLDIR="$1"
+export INSTALLDIR="$HOME/vectrec"
 export PATH="$INSTALLDIR:$PATH"
 #
 # Detect OS
