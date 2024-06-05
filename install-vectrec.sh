@@ -7,7 +7,7 @@
 # 
 #
 # Install CMOC
-# - Parameter $1: Install folder (Not yet used)
+# - Parameter $1: Install folder
 # 
 export INSTALLDIR="$HOME/vectrec"
 export PATH="$INSTALLDIR:$PATH"
@@ -18,167 +18,101 @@ OS="`uname`"
 case $OS in
   'Linux')
     OS='linux'
-    echo "Install on Linux"
     ;;
   'Darwin') 
     OS='macos'
-    echo "Install on macOS"
     ;;
   *) ;;
 esac
 #
-# END HEER FOR NOW
+# SHOW  INFO
 #
 echo ""
 echo "IMPORTANT INFORMATION"
 echo "Install script is not yet ready for all platforms"
 echo "Please use make-vectrec.sh instead to build VectreC from source"
 echo ""
-exit
+echo "Install path: $INSTALLDIR"
+echo ""
+#
+# Choose maCOS
+#
+if [[ $OS == 'macos' ]]
+then
+echo "macOS Info"
+echo "If you want install for macOS Intel press 'y' now"
+echo "Otherwise VectreC for ARM will be installed"
+echo ""
+read -p "Press 'y' to install the Intel version, for ARM press 'n' " answer
+case ${answer:0:1} in
+    y|Y )
+        OS='macos-intel'
+        echo "macOS Intel version will be installed"
+    ;;
+    * )
+        OS='macos-arm'
+        echo "macOS ARM version will be installed"
+    ;;
+esac
+fi
 #
 # Create folder
 #
 mkdir $INSTALLDIR
-cd $INSTALLDIR
 #
 # ===============================================================================
-# CLONE REPO
+# BINARIES: Copy all
 #
 echo
-echo "CLONE REPO +++++++++++++++++++++++++++++++++++++++++++++++"
+echo "INSTALL VECTREC +++++++++++++++++++++++++++++++++++++++++++++++"
 echo
-cd $INSTALLDIR
-git clone https://github.com/rogerboesch/vectrex-dev.git temp
-cd temp
-rm -rf .git
-find . | grep .git | xargs rm -rf
 #
+# Copy LWTOOLS binaries
 #
-# ===============================================================================
-# LWTOOLS: Download & build
+cp -v vectrec-binaries/$OS/lwar $INSTALLDIR/lwar
+cp -v vectrec-binaries/$OS/lwasm $INSTALLDIR/lwasm
+cp -v vectrec-binaries/$OS/lwlink $INSTALLDIR/lwlink
+cp -v vectrec-binaries/$OS/lwobjdump $INSTALLDIR/lwobjdump
 #
-echo
-echo "INSTALL LWTOOLS +++++++++++++++++++++++++++++++++++++++++++++++"
-echo
-cd $INSTALLDIR
-cd temp
-cd vectrec
-tar zxvf lwtools-4.17.tar.gz
-cd lwtools-4.17
-make
+# Copy CMOC binary and stdlib
 #
-# Copy binaries to install path
+cp -v vectrec-binaries/$OS/cmoc $INSTALLDIR/cmoc
+cp -v -R vectrec-binaries/$OS/stdlib $INSTALLDIR/stdlib
 #
-cp lwar/lwar $INSTALLDIR/lwar
-cp lwasm/lwasm $INSTALLDIR/lwasm
-cp lwlink/lwlink $INSTALLDIR/lwlink
-cp lwlink/lwobjdump $INSTALLDIR/lwobjdump
+# Copy scripts on macOS
 #
-# Set path (cmoc needs lwasm)
-#
-export PATH=$INSTALLDIR:$PATH
-#
-# ===============================================================================
-# CMOC: Build gcc6809 style version used by VectreC
-#
-echo
-echo "INSTALL CMOC +++++++++++++++++++++++++++++++++++++++++++++++"
-echo
-cd $INSTALLDIR
-cd temp
-cd vectrec
-tar zxvf cmoc-vectrec.tar.gz
-cd cmoc-vectrec
-./autogen.sh
-./configure
-make
-#
-# Copy binaries to install path
-#
-cp src/cmoc $INSTALLDIR/cmoc
-cp -R src/stdlib $INSTALLDIR/stdlib
-#
-# ------------------------------------------------------------------------------
-# SCRIPTS: Copy script
-#
-echo
-echo "COPY SCRIPTS +++++++++++++++++++++++++++++++++++++++++++++++"
-echo
-cd $INSTALLDIR
-cd temp
-cd vectrec
-#
-# Copy on macOS
-#
-if [[ $OS == 'macos' ]]; then
-cp compile-macos.sh $INSTALLDIR/compile.sh
-cp start-macos.sh $INSTALLDIR/start.sh
+if [[ $OS == 'macos-arm' ]]; then
+cp -v vectrec-binaries/compile-macos.sh $INSTALLDIR/compile.sh
+cp -v vectrec-binaries/start-macos.sh $INSTALLDIR/start.sh
+fi
+if [[ $OS == 'macos-intel' ]]; then
+cp -v vectrec-binaries/compile-macos.sh $INSTALLDIR/compile.sh
+cp -v vectrec-binaries/start-macos.sh $INSTALLDIR/start.sh
 fi
 #
-# Copy on linux
+# Copy scripts on linux
 #
 if [[ $OS == 'linux' ]]; then
-cp compile-linux.sh $INSTALLDIR/compile.sh
-cp start-linux.sh $INSTALLDIR/start.sh
+cp -v vectrec-binaries/compile-linux.sh $INSTALLDIR/compile.sh
+cp -v vectrec-binaries/start-linux.sh $INSTALLDIR/start.sh
 fi
 chmod a+x $INSTALLDIR/compile.sh
 chmod a+x $INSTALLDIR/start.sh
 #
-# ------------------------------------------------------------------------------
-# CODE: Copy Sample & Tutorial
+# Copy Sample & Tutorial
 #
-echo
-echo "COPY CODE ++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo
-cd $INSTALLDIR
-cd temp
-cd vectrec
-cp -R sample $INSTALLDIR/sample
-cd ..
-cp -R tutorial-code $INSTALLDIR/tutorial
+cp -v -R vectrec-sample $INSTALLDIR/sample
+cp -v -R tutorial-code $INSTALLDIR/tutorial
 #
-# ===============================================================================
-# EMULATOR: Build
+# Copy emulator binary
 #
-echo
-echo "INSTALL EMULATOR +++++++++++++++++++++++++++++++++++++++++++++++"
-echo
-cd $INSTALLDIR
-cd temp
-cd vec2x
+cp -v vectrec-binaries/$OS/vec2x $INSTALLDIR/vec2x
 #
-cmake -Bbuild
-cd build
-make
-#
-# Copy exe
-#
-if [[ $OS == 'macos' ]]; then
-cp vec2x $INSTALLDIR/vec2x
-fi
-#
-# ------------------------------------------------------------------------------
 # Copy ROM file
 #
-echo
-echo "COPY ROM FILE +++++++++++++++++++++++++++++++++++++++++++++++"
-echo
-cd $INSTALLDIR
-cd temp
-cd vec2x
-#
 mkdir $INSTALLDIR/roms
-cp -v romfast.bin $INSTALLDIR/roms/romfast.bin
-cp -v empty.png $INSTALLDIR/roms/empty.png
-#
-# ===============================================================================
-# Cleanup
-#
-echo
-echo "CLEANUP ++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo
-cd $INSTALLDIR
-rm -rfv temp
+cp -v vec2x/romfast.bin $INSTALLDIR/roms/romfast.bin
+cp -v vec2x/empty.png $INSTALLDIR/roms/empty.png
 #
 # ===============================================================================
 # Finished
