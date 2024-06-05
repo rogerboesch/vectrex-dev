@@ -4,7 +4,7 @@
 
 VectreC is a Visual Studio Code Extension currently under development. Once finished, it will have the following features:
 
-- Installabls as VS Code extension
+- Installable as VS Code extension
 - Compile C projects directly in VS Code — available
 - Start programs directly from VS Code in embedded Emulator — available
 - Vectrex syntax highlighting
@@ -18,12 +18,12 @@ While VectreC is still in development, it's already a powerful tool for game pro
 ### How to install VectreC
 
 - Download this repository
-- Execute install-vectrec.sh from terminal if you are on macOS or Linux
-- Execute install-vectrec.bat from terminal if you are on Windows (coming soon)
+- Execute install-vectrec.sh from command line if you are on macOS or Linux
+- Execute install-vectrec.bat from DOS Console if you are on Windows (coming soon)
 
 ### How to build VectreC from source
 
-If you're platform is not yet suported then use the follwing commands to build it for macOS or Linux
+If you're platform is not yet supported then use the follwing commands to build it for macOS or Linux
 
 ```bash
 $ curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/vectrec/make-vectrec.sh
