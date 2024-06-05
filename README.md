@@ -28,9 +28,9 @@ While VectreC is still in development, it's already a powerful tool and compatib
 If you're platform is not yet supported then use the follwing commands to build it for macOS or Linux
 
 ```bash
-$ curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/vectrec/make-vectrec.sh
-$ chmod a+x make-vectrec.sh
-$ ./make-vectrec.sh $HOME/vectrec
+curl -O https://raw.githubusercontent.com/rogerboesch/vectrex-dev/master/vectrec/make-vectrec.sh
+chmod a+x make-vectrec.sh
+./make-vectrec.sh $HOME/vectrec
 ```
 
 ### More Information
